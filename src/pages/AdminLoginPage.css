@@ -1,0 +1,292 @@
+/* =================================
+   ROYAL LUXURY BACKGROUND
+================================= */
+
+.admin-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #0b0f1a, #1a1f2e, #111827, #1e1b4b);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+/* Soft moving light overlay */
+.admin-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,215,0,0.08), transparent 40%);
+  animation: lightMove 12s linear infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes lightMove {
+  0% { transform: translate(-10%, -10%); }
+  50% { transform: translate(10%, 10%); }
+  100% { transform: translate(-10%, -10%); }
+}
+
+/* =================================
+   STAR BACKGROUND LAYER
+================================= */
+
+.admin-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, #ffffff, transparent),
+    radial-gradient(1px 1px at 40% 70%, #ffd700, transparent),
+    radial-gradient(2px 2px at 60% 20%, #ffffff, transparent),
+    radial-gradient(1px 1px at 80% 50%, #ffd700, transparent),
+    radial-gradient(2px 2px at 10% 80%, #ffffff, transparent),
+    radial-gradient(1px 1px at 90% 10%, #ffd700, transparent);
+  background-repeat: repeat;
+  background-size: 400px 400px;
+  animation: starsMove 60s linear infinite;
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Stars Slow Movement */
+@keyframes starsMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-200px, -200px); }
+}
+
+/* =================================
+   TWINKLING EFFECT
+================================= */
+
+.admin-wrapper .twinkle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: twinkleEffect 4s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes twinkleEffect {
+  0% { opacity: 0.4; }
+  100% { opacity: 0.8; }
+}
+
+/* =================================
+   PREMIUM CARD
+================================= */
+
+.login-panel {
+  position: relative;
+  width: 170px;
+  height: 75px;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+  z-index: 2;
+}
+
+.login-panel.active {
+  width: 400px;
+  height: 480px;
+  animation: floating 5s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* =================================
+   LUXURY GOLD ANIMATED BORDER
+================================= */
+
+.login-panel::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 28px;
+  padding: 2px;
+  background: linear-gradient(60deg, #ffd700, #ffcc00, #b8860b, #ffd700);
+  background-size: 300% 300%;
+  animation: goldBorder 6s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+@keyframes goldBorder {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* =================================
+   GLASSMORPHISM PANEL
+================================= */
+
+.login-panel,
+.login-content,
+.open-btn {
+  backdrop-filter: blur(25px);
+  background: rgba(20, 20, 35, 0.75);
+  border-radius: 28px;
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.7),
+    inset 0 0 30px rgba(255,215,0,0.05);
+}
+
+/* =================================
+   OPEN BUTTON
+================================= */
+
+.open-btn {
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: #ffd700;
+  font-size: 18px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  font-weight: 600;
+  background: transparent;
+  transition: 0.4s ease;
+}
+
+.open-btn:hover {
+  transform: scale(1.08);
+  text-shadow: 0 0 15px #ffd700;
+}
+
+/* =================================
+   LOGIN CONTENT
+================================= */
+
+.login-content {
+  padding: 50px;
+  text-align: center;
+  animation: fadeInScale 0.7s ease;
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.login-content h2 {
+  color: #ffd700;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+/* =================================
+   INPUT FIELDS
+================================= */
+
+.login-content input {
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 35px;
+  border: 1px solid rgba(255,215,0,0.2);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  outline: none;
+  transition: 0.4s ease;
+}
+
+.login-content input:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 25px rgba(255,215,0,0.7);
+  transform: scale(1.05);
+}
+
+/* =================================
+   SIGN IN BUTTON
+================================= */
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 35px;
+  border: none;
+  margin-top: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #ffd700, #b8860b);
+  color: #111;
+  transition: 0.4s ease;
+}
+
+.submit-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(255,215,0,0.8);
+}
+
+/* =================================
+   LOADING ANIMATION
+================================= */
+
+.submit-btn.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.submit-btn.loading::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 3px solid #111;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* =================================
+   CLOSE BUTTON
+================================= */
+
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  background: none;
+  border: none;
+  color: #ffd700;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.close-btn:hover {
+  transform: rotate(180deg) scale(1.2);
+  color: #fff;
+}

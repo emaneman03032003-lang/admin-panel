@@ -1,0 +1,630 @@
+/* 🌟 LUXURY VIP ADMIN PAGES - PREMIUM STYLING 🌟 */
+
+/* ============================================
+   BUTTONS - PREMIUM STYLING
+   ============================================ */
+
+.btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--luxury-gold) 0%, var(--luxury-gold-light) 100%);
+  color: var(--primary-black);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--luxury-gold);
+  color: var(--luxury-gold);
+}
+
+.btn-secondary:hover {
+  background: rgba(212, 175, 55, 0.1);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+/* ============================================
+   ADMIN PAGES GENERAL
+   ============================================ */
+
+.admin-page {
+  padding: 40px 30px;
+  min-height: calc(100vh - 150px);
+  background: linear-gradient(135deg, transparent 0%, rgba(212, 175, 55, 0.02) 100%);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 30px;
+  margin-bottom: 50px;
+  padding: 30px;
+  gap: 30px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(10, 14, 39, 0.6) 0%, rgba(26, 31, 58, 0.6) 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+}
+
+.page-header h1 {
+  margin-bottom: 10px;
+  color: var(--luxury-gold);
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.page-subtitle {
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.page-header-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* ============================================
+   FILTERS & SEARCH
+   ============================================ */
+
+.filters-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border: 1.5px solid var(--card-border);
+  border-radius: 14px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px 40px 14px 18px;
+  background: rgba(26, 26, 26, 0.6);
+  border: 1.5px solid rgba(212, 175, 55, 0.2);
+  border-radius: 10px;
+  color: var(--primary-white);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--luxury-gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-lighter);
+  font-size: 1.2rem;
+}
+
+.filter-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.filter-group label {
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.filter-group select {
+  padding: 10px 14px;
+  background: rgba(26, 26, 26, 0.6);
+  border: 1.5px solid rgba(212, 175, 55, 0.2);
+  color: var(--primary-white);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-group select:hover,
+.filter-group select:focus {
+  border-color: var(--luxury-gold);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+/* ============================================
+   DATA TABLES - LUXURY STYLE
+   ============================================ */
+
+.data-table-wrapper {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border: 1.5px solid var(--card-border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.data-table-wrapper:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 25px 50px rgba(212, 175, 55, 0.1);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.data-table thead {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.02) 100%);
+}
+
+.data-table th {
+  padding: 20px 24px;
+  text-align: left;
+  color: var(--luxury-gold);
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+  position: relative;
+}
+
+.data-table th:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--luxury-gold), transparent);
+}
+
+.data-table tbody tr {
+  transition: var(--transition);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.data-table tbody tr:hover {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.data-table td {
+  padding: 18px 24px;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.data-table tbody tr:hover td {
+  color: var(--text-premium);
+}
+
+/* ============================================
+   ACTION BUTTONS IN TABLES
+   ============================================ */
+
+.table-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.action-btn {
+  padding: 8px 14px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: transparent;
+  color: var(--luxury-gold);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+.action-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--luxury-gold);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.action-btn-delete {
+  border-color: rgba(255, 107, 107, 0.3);
+  color: #ff9999;
+}
+
+.action-btn-delete:hover {
+  background: rgba(255, 107, 107, 0.1);
+  border-color: #ff9999;
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  padding: 30px;
+}
+
+.pagination a,
+.pagination button {
+  padding: 10px 14px;
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  background: transparent;
+  color: var(--luxury-gold);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.pagination a:hover,
+.pagination button:hover {
+  background: linear-gradient(135deg, var(--luxury-gold) 0%, var(--luxury-gold-light) 100%);
+  color: var(--primary-black);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+.pagination .active {
+  background: linear-gradient(135deg, var(--luxury-gold) 0%, var(--luxury-gold-light) 100%);
+  color: var(--primary-black);
+  border-color: var(--luxury-gold);
+}
+
+.pagination .disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   FORMS - LUXURY STYLE
+   ============================================ */
+
+.form-container {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border: 1.5px solid var(--card-border);
+  border-radius: 14px;
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--luxury-gold);
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid rgba(212, 175, 55, 0.2);
+  background: rgba(26, 26, 26, 0.6);
+  color: var(--primary-white);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(201, 184, 150, 0.4);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--luxury-gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+  background: rgba(26, 26, 26, 0.8);
+}
+
+.form-helper-text {
+  color: var(--text-lighter);
+  font-size: 0.85rem;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* ============================================
+   MODALS & DIALOGS
+   ============================================ */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal {
+  background: linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(26, 31, 58, 0.95) 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 500px;
+  box-shadow: 0 60px 120px rgba(0, 0, 0, 0.5), 0 0 60px rgba(212, 175, 55, 0.2);
+  animation: slideUp 0.4s ease;
+}
+
+.modal h2 {
+  color: var(--luxury-gold);
+  margin-bottom: 20px;
+  letter-spacing: 0.8px;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.modal-footer .btn {
+  min-width: 120px;
+}
+
+/* ============================================
+   STATUS INDICATORS
+   ============================================ */
+
+.status-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.status-active {
+  background: linear-gradient(135deg, rgba(81, 207, 102, 0.2) 0%, rgba(76, 175, 80, 0.2) 100%);
+  color: #51cf66;
+  border: 1px solid rgba(81, 207, 102, 0.3);
+}
+
+.status-inactive {
+  background: linear-gradient(135deg, rgba(255, 159, 64, 0.2) 0%, rgba(255, 152, 0, 0.2) 100%);
+  color: #ffb74d;
+  border: 1px solid rgba(255, 159, 64, 0.3);
+}
+
+.status-pending {
+  background: linear-gradient(135deg, rgba(156, 39, 176, 0.2) 0%, rgba(103, 58, 183, 0.2) 100%);
+  color: #ba68c8;
+  border: 1px solid rgba(156, 39, 176, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .page-header {
+    flex-direction: column;
+  }
+  
+  .filters-section {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 40px 15px;
+  }
+  
+  .page-header {
+    gap: 20px;
+  }
+  
+  .page-header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .filters-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .search-box {
+    width: 100%;
+  }
+  
+  .data-table {
+    font-size: 0.9rem;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 14px 16px;
+  }
+  
+  .form-container {
+    padding: 30px 20px;
+  }
+  
+  .modal {
+    max-width: 90%;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-page {
+    padding: 30px 10px;
+  }
+  
+  .page-header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .filters-section {
+    padding: 15px;
+    flex-direction: column;
+  }
+  
+  .search-box input {
+    padding: 12px 36px 12px 14px;
+    font-size: 0.9rem;
+  }
+  
+  .data-table {
+    font-size: 0.85rem;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 10px 12px;
+  }
+  
+  .table-actions {
+    gap: 5px;
+  }
+  
+  .action-btn {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+  
+  .form-container {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .modal {
+    max-width: 95%;
+    padding: 20px;
+  }
+  
+  .modal-footer {
+    flex-direction: column;
+  }
+  
+  .modal-footer .btn {
+    width: 100%;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
