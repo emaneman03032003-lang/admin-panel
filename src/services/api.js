@@ -23,16 +23,15 @@
 // we were importing axios earlier for a single method but never set up an instance
 // since the rest of the file uses fetch we can drop it and standardise on a base URL
 
-// prefer a Vite environment variable when available, otherwise fall back to a hardcoded constant
-// first look for the 'VITE_API_BASE' variable – older code used this name –
-// fallback to 'VITE_API_BASE_URL' if the team defined that in .env, then finally
-// a hardcoded string so the dev experience works without a file.
-const API_BASE =
-  import.meta.env.VITE_API_BASE ||
-  import.meta.env.VITE_API_BASE_URL ||
-  // default to the backend port defined in backend/.env
-  'http://localhost:5001/api';
+// Use VITE_API_BASE_URL from environment variables (.env file)
+// Fallback to localhost for development if not defined
+const API_BASE = 
+  // import.meta.env.VITE_API_BASE_URL || 
+  // 'http://localhost:5001/api';
 
+
+
+   import.meta.env.VITE_API_BASE_URL ;
 // debug output so developers can immediately see which base URL is being used
 console.log('🔧 admin API base URL =', API_BASE);
 
