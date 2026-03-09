@@ -26,12 +26,12 @@
 // Use VITE_API_BASE_URL from environment variables (.env file)
 // Fallback to localhost for development if not defined
 const API_BASE = 
-  // import.meta.env.VITE_API_BASE_URL || 
-  // 'http://localhost:5001/api';
+  import.meta.env.VITE_API_BASE_URL || 
+  'http://localhost:5001/api';
 
 
 
-   import.meta.env.VITE_API_BASE_URL ;
+   
 // debug output so developers can immediately see which base URL is being used
 console.log('🔧 admin API base URL =', API_BASE);
 

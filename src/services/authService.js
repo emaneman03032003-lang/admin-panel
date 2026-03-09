@@ -34,8 +34,8 @@ export const adminLogin = async (email, password) => {
       throw new Error("❌ Access Denied: Only admin emails can login");
     }
     // Use backend API (no Firebase)
-    // const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
-    const apiUrl = import.meta.env.VITE_API_URL ;
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+  
     const response = await fetch(`${apiUrl}/auth/admin-login`, {
     
       method: 'POST',
@@ -125,8 +125,8 @@ export const createNewAdmin = async (email, password, displayName) => {
     }
 
     // Call backend API to create admin
-    // const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
-      const apiUrl = import.meta.env.VITE_API_URL;
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+ 
     const response = await fetch(`${apiUrl}/auth/admin-register`, {
    
       method: 'POST',
